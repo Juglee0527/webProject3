@@ -6,12 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import dto.UserDTO;
 import util.DBConn;
 
 public class UserDAO {
 	Connection con = DBConn.getConnection();
 
-	public boolean signIn(String id, String passwd) {
+	public int signIn(String id, String passwd) {
 		
 		String sql = "SELECT * FROM tbl_user_info WHERE id = ? and passwd = ?"; 
 		try {
@@ -20,14 +21,16 @@ public class UserDAO {
 			pstmt.setString(2, passwd);
 			ResultSet rs = pstmt.executeQuery();
 			
-			rs.last();
-			return (rs.getRow() > 0);
+			if (rs.next()) {
+				return rs.getInt(0);
+			}
+
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return false;
+		return -1;
 	}
 
 	public boolean signUp(String id, 
@@ -58,6 +61,22 @@ public class UserDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return false;
+	}
+	
+	public boolean setAddrFromUser(String addr, int no) {
+		
+		String sql = "update tbl_user_info set addr = ? where no = ?";
+		try {
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(0, addr);
+			pstmt.setInt(1, no);
+			
+			return (pstmt.executeUpdate() == 1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return false;
 	}
 	
