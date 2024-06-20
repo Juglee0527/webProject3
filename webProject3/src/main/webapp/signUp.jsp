@@ -9,30 +9,26 @@
 <body>
     <div class="signup-container">
         <h2>회원가입</h2>
-        <form action="#" method="post">
+        <form action="SignUp_Process.jsp" method="post">
             <div class="input-group">
-                <label for="username">아이디</label>
-                <input type="text" id="username" name="username" required>
+                <label for="id">아이디</label>
+                <input type="text" id="id" name="id" required>
             </div>
             <div class="input-group">
-                <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" required>
+                <label for="passwd">비밀번호</label>
+                <input type="password" id="passwd" name="passwd" required>
             </div>
             <div class="input-group">
-                <label for="confirm-password">비밀번호 재확인</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
+                <label for="confirmPassword">비밀번호 재확인</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
             </div>
             <div class="input-group">
                 <label for="name">이름</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="input-group">
-                <label for="birthdate">생년월일</label>
-                <input type="date" id="birthdate" name="birthdate" required>
-            </div>
-            <div class="input-group">
-                <label for="phone">전화번호</label>
-                <input type="tel" id="phone" name="phone" required>
+                <label for="phoneNumber">전화번호</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
             </div>
             <button type="submit" class="btn">회원가입</button>
         </form>

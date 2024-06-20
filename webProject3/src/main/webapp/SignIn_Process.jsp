@@ -28,15 +28,16 @@
 	UserDAO userDAO = new UserDAO();
 	if ( userDAO.signIn(id, passwd) != -1 ) {
 		script.println("<script>");
-		script.println("alert('로그인에 성공했습니다.')");
-		// 성공하면 href 바꾸던가 하면될듯
-		script.println("</script>");
-		script.close();
+        script.println("alert('로그인에 성공했습니다.');");
+        script.println("window.location.href = 'main.jsp';"); // main.jsp로 이동
+        script.println("</script>");
+        script.close();
 	} else {
 		script.println("<script>");
-		script.println("alert('로그인에 실패했습니다.')");
-		script.println("</script>");
-		script.close();
+        script.println("alert('로그인에 실패했습니다.');");
+        script.println("window.location.href = 'login.jsp';"); // login.jsp로 이동
+        script.println("</script>");
+        script.close();
 	}
 	
 

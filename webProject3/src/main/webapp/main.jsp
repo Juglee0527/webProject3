@@ -10,17 +10,17 @@
     <header>
         <a href="#" class="logo">사이트 로고</a>
         <nav>
-            <a href="#">로그인</a>
-            <a href="#">My page</a>
+            <a href="login.jsp">로그인</a>
+            <a href="myPage.jsp">My page</a>
         </nav>
     </header>
 
     <div class="main-content">
         <nav>
-            <a href="#">중고 거래 게시판</a>
-            <a href="#">커뮤니티</a>
-            <a href="#">랭킹</a>
-            <a href="#">구매&판매내역</a>
+            <a href="board.jsp">중고 거래 게시판</a>
+            <a href="community.jsp">커뮤니티</a>
+            <a href="ranking.jsp">랭킹</a>
+            <a href="history.jsp">구매&판매내역</a>
         </nav>
 
         <h2>현재 조회수가 높은 상품</h2>
