@@ -22,7 +22,7 @@ public class UserDAO {
 			ResultSet rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
-				return rs.getInt(0);
+				return rs.getInt(1);
 			}
 
 
@@ -38,11 +38,11 @@ public class UserDAO {
 						 String name,
 						 String nickname,
 						 String phoneNumber,
-						 int gender, 
+						 String gender, 
 						 String addr,
 						 String profileImage) 
 	{
-		
+		System.out.println("asdf");
 		String sql = "insert into tbl_user_info"
 				   + "(id, passwd, name, nickname, phone_number, gender, addr, profile_image) VALUES"
 				   + "(?, ?, ?, ?, ?, ?, ?, ?)";		
@@ -53,7 +53,7 @@ public class UserDAO {
 			pstmt.setString(3, name);
 			pstmt.setString(4, nickname);
 			pstmt.setString(5, phoneNumber);
-			pstmt.setInt(6, gender);
+			pstmt.setString(6, gender);
 			pstmt.setString(7, addr);
 			pstmt.setString(8, profileImage);
 			

@@ -7,12 +7,12 @@ public class UserDTO {
 	String nickName;
 	String phoneNumber;
 	int isVerified;
-	int gender;
+	String gender;
 	String addr;
 	String profileImage;
 
 	public UserDTO(String id, String passwd, String name, String nickName, String phoneNumber, int isVerified,
-			int gender, String addr, String profileImage) {
+			String gender, String addr, String profileImage) {
 		this.id = id;
 		this.passwd = passwd;
 		this.name = name;
@@ -72,11 +72,11 @@ public class UserDTO {
 		this.isVerified = isVerified;
 	}
 
-	public int getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(int gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

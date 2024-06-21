@@ -9,7 +9,7 @@
 <body>
     <div class="login-container">
         <h2>로그인</h2>
-        <form action="" method="post">
+        <form action="login_process.jsp" method="post">
             <div class="input-group">
                 <label for="id">아이디</label>
                 <input type="text" id="id" name="id" required>
