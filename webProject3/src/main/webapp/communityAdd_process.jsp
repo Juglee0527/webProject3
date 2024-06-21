@@ -31,7 +31,7 @@
 	
 	PostDAO postDAO = PostDAO.getInstance();
 	System.out.println(session.getAttribute("userNo"));
-	postDAO.addPost(0, Util.parseInt((String)session.getAttribute("userNo")) , title, context);
+	postDAO.addPost(0, 1, title, context);
 	response.sendRedirect("community.jsp");
 
 %>

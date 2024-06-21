@@ -22,6 +22,23 @@ public class ProductDAO {
 		return instance;
 	}
 	
+	public int getLastRow() {
+		String sql = "SELECT * FROM tbl_product_info";
+		try {
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				rs.last();
+				return rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
 	public ArrayList<ProductDTO> getProductList() {
 		String sql = "SELECT * FROM tbl_product_info";
 		ArrayList<ProductDTO> productList = new ArrayList<ProductDTO>();
@@ -60,15 +77,15 @@ public class ProductDAO {
 		
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setInt(0, sellerNo);
-			pstmt.setString(1, title);
-			pstmt.setString(2, description);
-			pstmt.setString(3, addr);
-			pstmt.setInt(4, price);
+			pstmt.setInt(1, sellerNo);
+			pstmt.setString(2, title);
+			pstmt.setString(3, description);
+			pstmt.setString(4, addr);
+			pstmt.setInt(5, price);
 			
 			if (pstmt.executeUpdate() == 1) {
-				int no = pstmt.getMaxRows();
-				ProductDTO product = new ProductDTO(no, sellerNo, title, description, addr, price, LocalDateTime.now(), null, 0);
+//				int no = pstmt.getMaxRows();
+//				ProductDTO product = new ProductDTO(no, sellerNo, title, description, addr, price, LocalDateTime.now(), null, 0);
 //				productList.put(no, product);
 				return true;
 			}

@@ -9,14 +9,18 @@
 <body>
     <div class="signup-container">
         <h2>중고거래 게시판 등록</h2>
-        <form action="" method="post">
+        <form action="boardAdd_process.jsp" method="post" enctype="multipart/form-data">
             <div class="input-group">
                 <label for="title">제목</label>
                 <input type="text" id="title" name="title" required>
             </div>
             <div class="input-group">
                 <label for="mainText">본문</label>
-                <input type="password" id="mainText" name="mainText" required>
+                <input type="text" id="context" name="context" required>
+            </div>
+            <div class="input-group">
+                <label for="mainText">가격</label>
+                <input type="number" id="price" name="price" required>
             </div>
             <div class="input-group">
                 <label for="photo">사진</label>

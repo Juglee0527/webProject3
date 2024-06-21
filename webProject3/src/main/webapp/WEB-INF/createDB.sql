@@ -56,7 +56,7 @@ create table tbl_post_comments(
 create table tbl_product_info(
 	no int primary key not null auto_increment, 
 	seller_no int not null, title varchar(255) not null, 
-	description text, addr varchar(255) not null, 
+	description text, addr varchar(255) null, 
 	price int not null, 
 	date datetime not null default now(), 
 	views int not null, 
