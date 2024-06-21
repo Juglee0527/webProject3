@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class ProductDTO {
+	int no;
 	int sellerNo;
 	String title;
 	String description;
@@ -13,6 +14,14 @@ public class ProductDTO {
 	LocalDateTime modifiedDate;
 	int likes;
 	int views;
+	
+	public int getNo() {
+		return no;
+	}
+	
+	public void setNo(int no) {
+		this.no = no;
+	}
 	
 	public int getSellerNo() {
 		return sellerNo;
@@ -86,7 +95,8 @@ public class ProductDTO {
 		this.views = views;
 	}
 
-	public ProductDTO(int sellerNo, String title, String description, String addr, int price, LocalDateTime creationDate, LocalDateTime modifiedDate, int likes) {
+	public ProductDTO(int no, int sellerNo, String title, String description, String addr, int price, LocalDateTime creationDate, LocalDateTime modifiedDate, int likes) {
+		this.no = no;
 		this.sellerNo = sellerNo;
 		this.title = title;
 		this.description = description;
