@@ -8,15 +8,15 @@
 </head>
 <body>
     <div class="signup-container">
-        <h2>커뮤니티 등록 등록</h2>
-        <form action="" method="post">
+        <h2>커뮤니티 등록</h2>
+        <form action="communityAdd_process.jsp" method="post">
             <div class="input-group">
                 <label for="title">제목</label>
                 <input type="text" id="title" name="title" required>
             </div>
             <div class="input-group">
                 <label for="mainText">본문</label>
-                <input type="password" id="mainText" name="mainText" required>
+                <input type="text" id="context" name="context" required>
             </div>
             <button type="submit" class="btn">등록</button>
         </form>

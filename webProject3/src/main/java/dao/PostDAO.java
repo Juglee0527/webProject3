@@ -62,10 +62,13 @@ public class PostDAO {
 		
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setInt(0, parentPostNo);
-			pstmt.setInt(1, authorNo);
-			pstmt.setString(2, title);
-			pstmt.setString(3, context);
+			
+			Object p = (parentPostNo == 0) ?  null : parentPostNo;
+			
+			pstmt.setObject(1, p);
+			pstmt.setInt(2, authorNo);
+			pstmt.setString(3, title);
+			pstmt.setString(4, context);
 			
 			return (pstmt.executeUpdate() == 1);
 		} catch (SQLException e) {

@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.ProductDAO"%>
+<%@page import="dto.ProductDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,7 +24,9 @@
             <a href="myPage.jsp">마이페이지</a>
         </nav>
     </header>
-
+	
+	
+	
     <div class="main-content">
         <h2>현재 조회수가 높은 상품</h2>
         <div class="product-list">

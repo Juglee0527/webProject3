@@ -97,8 +97,8 @@ public class UserDAO {
 		String sql = "update tbl_user_info set addr = ? where no = ?";
 		try {
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setString(0, addr);
-			pstmt.setInt(1, no);
+			pstmt.setString(1, addr);
+			pstmt.setInt(2, no);
 			
 			return (pstmt.executeUpdate() == 1);
 		} catch (SQLException e) {
