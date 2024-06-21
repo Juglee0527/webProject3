@@ -36,8 +36,10 @@ create table tbl_post_info(
 	author_no int not null, 
 	title varchar(255) not null, 
 	context text not null, 
-	date datetime not null default now(),
-	likes int not null default 0, views int not null default 0, 
+	creation_date datetime not null default now(),
+	modified_date datetime not null,
+	likes int not null default 0,
+views int not null default 0, 
 	foreign key(parent_post_no) references tbl_post_info(no), 
 	foreign key(author_no) references tbl_user_info(no));
 
@@ -56,18 +58,26 @@ create table tbl_post_comments(
 create table tbl_product_info(
 	no int primary key not null auto_increment, 
 	seller_no int not null, title varchar(255) not null, 
-	description text, addr varchar(255) not null, 
+	title text not null,
+	description text,
+addr varchar(255) not null, 
 	price int not null, 
-	date datetime not null default now(), 
-	views int not null, 
+	creation_date datetime not null default now(), 
+	modified_date datetime not null,
+	likes int not null default 0
+	views int not null default 0, 
 	foreign key(seller_no) references tbl_user_info(no));
 
 create table tbl_product_chat(
 	no int primary key not null auto_increment, 
+	parent_chat_no int not null,
+	product_no int not null,
 	sender_no int not null, 
 	receiver_no int not null, 
 	content text not null, 
 	date datetime not null default now(), 
+	foreign key(parent_chat_no) references tbl_product_chat(no),
+	foreign key(product_no) references tbl_product_info(no),
 	foreign key(sender_no) references tbl_user_info(no), 
 	foreign key(receiver_no) references tbl_user_info(no));
 
@@ -78,5 +88,6 @@ create table tbl_transaction_info(
 	date datetime not null default now(), 
 	foreign key(product_no) references tbl_product_info(no), 
 	foreign key(buyer_no) references tbl_user_info(no));
+
 
 
