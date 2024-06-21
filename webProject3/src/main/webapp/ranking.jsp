@@ -4,23 +4,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>랭킹</title>
+<title>이달의 거래왕</title>
 </head>
 <body>
-    <h2 class="ranking-title">이달의 거래왕</h2>
+    <h1 style="text-align: center;">이달의 거래왕</h1>
 
     <!-- 랭킹 아이템 -->
     <div class="ranking-item">
         <p>1등</p>
-        <p>사용자1 (거래 횟수: 100)</p>
+        <p>류선재 (거래 횟수: 100)</p>
     </div>
     <div class="ranking-item">
         <p>2등</p>
-        <p>사용자2 (거래 횟수: 80)</p>
+        <p>이아무개 (거래 횟수: 80)</p>
     </div>
     <div class="ranking-item">
         <p>3등</p>
-        <p>사용자3 (거래 횟수: 70)</p>
+        <p>사기꾼 (거래 횟수: 70)</p>
     </div>
     <!-- 랭킹 아이템 끝 -->
 </body>

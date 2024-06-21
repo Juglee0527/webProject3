@@ -4,25 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>중고거래 게시판 등록</title>
 </head>
 <body>
-    <div class="login-container">
-        <h2>로그인</h2>
+    <div class="signup-container">
+        <h2>중고거래 게시판 등록</h2>
         <form action="" method="post">
             <div class="input-group">
-                <label for="id">아이디</label>
-                <input type="text" id="id" name="id" required>
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" required>
             </div>
             <div class="input-group">
-                <label for="passwd">비밀번호</label>
-                <input type="password" id="passwd" name="passwd" required>
+                <label for="mainText">본문</label>
+                <input type="password" id="mainText" name="mainText" required>
             </div>
-            <button type="submit" class="btn">로그인</button>
+            <div class="input-group">
+                <label for="photo">사진</label>
+                <input type="file" id="photo" name="photo" required>
+            </div>
+            <button type="submit" class="btn">등록</button>
         </form>
-        <div class="signup-link">
-            <p>아직 회원이 아니신가요? <a href="signUp.jsp">회원가입</a></p>
-        </div>
     </div>
 </body>
 
@@ -36,8 +37,7 @@
 	    height: 100vh;
 	    margin: 0;
 	}
-	
-	.login-container {
+	.signup-container {
 	    background-color: #ffffff;
 	    padding: 20px;
 	    border-radius: 5px;
@@ -45,23 +45,19 @@
 	    width: 300px;
 	    text-align: center;
 	}
-	
-	.login-container h2 {
+	.signup-container h2 {
 	    margin-bottom: 20px;
 	    color: #333333;
 	}
-	
 	.input-group {
 	    margin-bottom: 15px;
 	    text-align: left;
 	}
-	
 	.input-group label {
 	    display: block;
 	    margin-bottom: 5px;
 	    color: #555555;
 	}
-	
 	.input-group input {
 	    width: 100%;
 	    padding: 8px;
@@ -69,7 +65,6 @@
 	    border-radius: 4px;
 	    box-sizing: border-box;
 	}
-	
 	.btn {
 	    width: 100%;
 	    padding: 10px;
@@ -80,22 +75,8 @@
 	    font-size: 16px;
 	    cursor: pointer;
 	}
-	
 	.btn:hover {
 	    background-color: #0056b3;
-	}
-	
-	.signup-link {
-	    margin-top: 15px;
-	}
-	
-	.signup-link a {
-	    color: #007bff;
-	    text-decoration: none;
-	}
-	
-	.signup-link a:hover {
-	    text-decoration: underline;
 	}
 </style>
 

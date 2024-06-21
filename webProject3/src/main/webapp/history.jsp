@@ -7,7 +7,7 @@
 <title>구매&판매 내역</title>
 </head>
 <body>
-    <h2 class="purchase-history-title">구매&판매 내역</h2>
+    <h1 style="text-align: center;">구매&판매 내역</h1>
 
     <div class="filter-options">
         <select>

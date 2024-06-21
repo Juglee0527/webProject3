@@ -7,21 +7,24 @@
 <title>커뮤니티</title>
 </head>
 <body>
-    <h2 class="community-title">자유 게시판</h2>
-
-    <!-- 게시물 예시 -->
-    <div class="post">
-        <h3 class="post-title">게시물 제목1</h3>
-        <p class="post-info">작성자: 사용자1 | 작성일: 2024-05-21 | 조회수: 100 | 추천수: 5 | 댓글수: 3</p>
-        <p>게시물 내용...</p>
+    <div class="header-wrapper">
+        <h1>커뮤니티</h1>
+        <a href="communityAdd.jsp">
+         	<button class="register-btn">등록하기</button>
+         </a>
     </div>
 
     <div class="post">
-        <h3 class="post-title">게시물 제목2</h3>
-        <p class="post-info">작성자: 사용자2 | 작성일: 2024-05-20 | 조회수: 50 | 추천수: 3 | 댓글수: 2</p>
-        <p>게시물 내용...</p>
+        <h3 class="post-title">여자친구 구합니다..ㅜ</h3>
+        <p class="post-info">작성자: 김모쏠 | 작성일: 2024-05-21 | 조회수: 0 | 추천수: 0 | 댓글수: 0</p>
+        <p>안녕하세요 25살 모쏠인 김모쏠이라고 합니다.. 저는 순수하고요...</p>
     </div>
-    <!-- 게시물 예시 끝 -->
+
+    <div class="post">
+        <h3 class="post-title">여기 맛집 추천해주세요!</h3>
+        <p class="post-info">작성자: 이식탐 | 작성일: 2024-05-20 | 조회수: 1000 | 추천수: 432 | 댓글수: 200</p>
+        <p>안녕하세요 이식탐입니다! 제가 한식, 중식, 일식 다 잘먹는데 추천...</p>
+    </div>
 </body>
 
 <style>
@@ -30,6 +33,28 @@
 	    background-color: #f0f0f0;
 	    padding: 20px;
 	}
+	.header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .header-wrapper h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .register-btn {
+        padding: 8px 16px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .register-btn:hover {
+        background-color: #218838;
+    }
 	.community-title {
 	    font-size: 24px;
 	    font-weight: bold;

@@ -4,33 +4,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인화면</title>
+<title>마이페이지</title>
 </head>
 <body>
-    <div class="welcome-message">
-        <h2>~님, 반갑습니다!</h2>
-    </div>
+    <h1 style="text-align: center;">마이페이지</h1>
     <div class="container">
-        <h3>마이페이지</h3>
-        <ul>
-            <li><a href="#">내가 올린 물품</a></li>
-            <li><a href="#">구매&판매 내역</a></li>
-            <li><a href="#">개인정보 수정</a></li>
-            <li><a href="#">로그아웃</a></li>
-            <li><a href="#">회원탈퇴</a></li>
-        </ul>
         <div class="btn-container">
-            <a href="#" class="btn">내가 올린 물품</a>
-            <a href="#" class="btn">구매&판매 내역</a>
-            <a href="#" class="btn">개인정보 수정</a>
-            <a href="#" class="btn">로그아웃</a>
-            <a href="#" class="btn">회원탈퇴</a>
+            <a href="personalInfoEdit.jsp" class="btn">개인정보 수정</a>
+            <a href="main.jsp" class="btn">로그아웃</a>
+            <a href="main.jsp" class="btn">회원탈퇴</a>
         </div>
-        <div class="recent-items">
-            <h4>최근 본 물품</h4>
-            <img src="item1.jpg" alt="최근 본 물품 1">
-            <img src="item2.jpg" alt="최근 본 물품 2">
-        </div>
+        <h2>내가 올린 물품</h2>
+	    <div class="post-container">
+	        <h2 class="post-title">i mac 싸게 팝니다</h2>
+	        <img class="product-image" src="images/product3.jpg" alt="제품 사진">
+	        <div class="additional-info">
+	            <p>아이맥이 너무 많아서 싸게 팝니다
+					작은건 10만원
+					큰건 15만원
+					너무 많아서 지금 가져가실 분 팔아요</p>
+	            <p>가격: 100,000원</p>
+	        </div>
+	    </div>
     </div>
 </body>
 <style>
@@ -39,6 +34,27 @@
 	    background-color: #f0f0f0;
 	    padding: 20px;
 	}
+	.post-container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    .post-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .product-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 300px;
+        margin-bottom: 10px;
+    }
+    .additional-info {
+        margin-bottom: 10px;
+    }
 	.welcome-message {
 	    text-align: center;
 	    margin-bottom: 20px;
