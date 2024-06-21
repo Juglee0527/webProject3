@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">사이트 로고</a>
+        <a href="#" class="logo">고수</a>
          <nav>
             <a href="board.jsp">중고 거래 게시판</a>
             <a href="community.jsp">커뮤니티</a>
@@ -21,11 +21,8 @@
         
         <nav>
             <a href="login.jsp">로그인</a>
-            <a href="myPage.jsp">마이페이지</a>
         </nav>
     </header>
-	
-	
 	
     <div class="main-content">
         <h2>현재 조회수가 높은 상품</h2>
