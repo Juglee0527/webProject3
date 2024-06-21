@@ -36,7 +36,7 @@
 		</script>
 		<%
 		session.setAttribute("userNo", userNo);
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("main_logout.jsp");
 	} else {
 		%>
 		<script type="text/javascript">

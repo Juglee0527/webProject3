@@ -23,22 +23,11 @@ String context = null;
 int price = 0;
 
 String originalFileName = multi.getFilesystemName("photo");
-if (originalFileName != null) {
-	String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
 
-	String newFileName = "product" + (ProductDAO.getInstance().getLastRow() + 1) + ".jpg";
-	out.println(newFileName);
-
-	// 파일 객체 생성
-	File oldFile = new File(uploadDir + "/" + originalFileName);
-	File newFile = new File(uploadDir + "/" + newFileName);
-
-	oldFile.renameTo(newFile);
-}
 
 ProductDAO pDAO = ProductDAO.getInstance();
 
-if (multi.getParameter("title") != null) 
+if (multi.getParameter("title") != null)
 	title = multi.getParameter("title");
 
 if (multi.getParameter("context") != null)
@@ -48,4 +37,22 @@ if (multi.getParameter("price") != null)
 	price = Util.parseInt(multi.getParameter("price"));
 
 pDAO.addProduct(1, title, context, "", price);
+
+if (originalFileName != null) {
+	String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
+
+	String newFileName = "product" + (ProductDAO.getInstance().getLastRow()) + ".jpg";
+
+	// 파일 객체 생성
+	File oldFile = new File(uploadDir + "/" + originalFileName);
+	File newFile = new File(uploadDir + "/" + newFileName);
+
+	oldFile.renameTo(newFile);
+}
+%>
+<script type="text/javascript">
+	alert("중고물품을 등록하였습니다.");
+</script>
+<%
+response.sendRedirect("board.jsp");
 %>
