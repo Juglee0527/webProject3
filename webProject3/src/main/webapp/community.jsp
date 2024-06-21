@@ -1,3 +1,9 @@
+<%@page import="dao.UserDAO"%>
+<%@page import="dto.UserDTO"%>
+<%@page import="dto.PostDTO"%>
+<%@page import="java.util.Collections"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.PostDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,18 +20,23 @@
          </a>
     </div>
 
-    <div class="post">
-        <h3 class="post-title">여자친구 구합니다..ㅜ</h3>
-        <p class="post-info">작성자: 김모쏠 | 작성일: 2024-05-21 | 조회수: 0 | 추천수: 0 | 댓글수: 0</p>
-        <p>안녕하세요 25살 모쏠인 김모쏠이라고 합니다.. 저는 순수하고요...</p>
+    
+    	<%
+			PostDAO pDao = PostDAO.getInstance();
+			ArrayList<PostDTO> postList = pDao.getPostList();	
+			Collections.reverse(postList);
+			for (int i = 0; i < postList.size(); i++) {
+				PostDTO post = postList.get(i);
+				UserDTO user = UserDAO.getInstance().getUser(post.getAuthorNo());
+		%>
+	<div class="post">
+        <h3 class="post-title"><%= post.getTitle() %></h3>
+        <p class="post-info">작성자: <%= user.getName() %> | 작성일: <%= post.getCreationDate() %> | 조회수: <%= post.getViews() %> | 추천수: <%= post.getLikes() %> | 댓글수: 0</p>
+        <p><%= post.getContext()%></p>
+        
+        
     </div>
-
-    <div class="post">
-        <h3 class="post-title">여기 맛집 추천해주세요!</h3>
-        <p class="post-info">작성자: 이식탐 | 작성일: 2024-05-20 | 조회수: 1000 | 추천수: 432 | 댓글수: 200</p>
-        <p>안녕하세요 이식탐입니다! 제가 한식, 중식, 일식 다 잘먹는데 추천...</p>
-    </div>
-</body>
+<%} %>
 
 <style>
 	body {

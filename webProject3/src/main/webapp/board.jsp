@@ -26,10 +26,10 @@
 			Collections.reverse(productList);
 			for (int i = 0; i < productList.size(); i++) {
 				ProductDTO product = productList.get(i);
-				System.out.println(product.getTitle());
+				
 		%>
 		<h2 class="post-title"><%= product.getTitle() %></h2>
-		<img class="product-image" src="images/product<%= i+1 %>.jpg" alt="제품 사진">
+		<img class="product-image" src="images/product<%= product.getNo() %>.jpg" alt="제품 사진">
 		<div class="additional-info">
             <p><%= product.getDescription() %></p>
             <p>가격: <%= Util.formatNum(product.getPrice()) %></p>

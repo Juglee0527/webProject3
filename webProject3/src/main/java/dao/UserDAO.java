@@ -11,6 +11,34 @@ import util.DBConn;
 
 public class UserDAO {
 	Connection con = DBConn.getConnection();
+	private static UserDAO instance = new UserDAO();
+	
+	public static UserDAO getInstance() {
+		return instance;
+	}
+	
+	public UserDTO getUser(int no) {
+		String sql = "SELECT * FROM tbl_user_info where no = ?";
+		try {
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				String id = rs.getString("id");
+				String name = rs.getString("name");
+				String phoneNumber = rs.getString("phone_number");
+				String addr = rs.getString("addr");
+				UserDTO user = new UserDTO(id, null, name, null, phoneNumber, 0, phoneNumber, addr, null);
+				return user;
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	public int signIn(String id, String passwd) {
 		
